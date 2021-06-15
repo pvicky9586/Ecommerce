@@ -2,7 +2,7 @@
 @section('content')
 
 
-<div class="container"> 
+<div> 
     @livewire('productos')
 </div> 
 @endsection
