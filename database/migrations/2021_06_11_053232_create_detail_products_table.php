@@ -14,14 +14,15 @@ class CreateDetailProductsTable extends Migration
     public function up()
     {
         Schema::create('detail_products', function (Blueprint $table) {
-             $table->engine = 'InnoDB';
+            $table->engine = 'InnoDB';
             $table->bigIncrements('id');
-            $table->string('colour');
+            $table->text('description');
+            //$table->string('colour')->nullable();
             $table->integer('amount');
-            $table->string('img')->nullable();
+            //$table->string('img')->nullable();
             $table->float('value')->nullable();
             // $table->unsignedBigInteger('category_id')->nullable();
-            $table->unsignedBigInteger('product_id')->nullable();
+            $table->unsignedBigInteger('product_id');
             $table->timestamps();
 
             // $table->foreign('category_id')->references('id')->on('categories')

@@ -22,8 +22,7 @@ class SeederProducts extends Seeder
     {
     	\App\Models\Product::factory()->count(30)->create(); 
 
-    	\App\Models\DetailProduct::factory()->count(100)->create(); 
-        //un producto puede tiner varios detalles segun color, talla...
+       
 
     	//\App\Models\Price::factory()->count(30)->create(); 
 

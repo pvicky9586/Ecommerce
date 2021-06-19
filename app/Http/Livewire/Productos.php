@@ -6,7 +6,9 @@ use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\Category;
 use App\Models\Product;
-//use App\Models\DetailProduct;
+use App\Models\DetailProduct;
+use App\Models\Colour;
+use Illuminate\Support\Collection;
 //use App\Models\Price;
 
 class Productos extends Component
@@ -30,9 +32,10 @@ class Productos extends Component
 		
 		// $prices=Price::all();
 		// $this->prices=$prices;
+		 // $detaills= DetailProduct::->product;
+  	//      $this->detaills = $detaills;
 		
-		// $details= DetailProduct::all();
-  	    // $this->details = $details;
+		 
 	}	
 
     public function render()
@@ -41,19 +44,58 @@ class Productos extends Component
     		return view('livewire.productos',[			
 			'products'=> Product::where(function($sub_query)
 				{   $sub_query->where('name','like', '%'.$this->search.'%');
-				})->orderBy('id','desc')->paginate(6) 
+				})->paginate(10) 
 			]);
 
     	}else{			
     		return view('livewire.productos',[			
 			'products'=> Product::where(function($sub_query)
 				{   $sub_query->where('category_id',$this->category_id);
-				})->orderBy('id','desc')->paginate(6) 
+				})->paginate(2) 
 			]);
        
    		}
     }
 
+    public $product, $amount, $colours, $images, $Nimages, $Ncolours, $img, $description;
+     public $ProdNames, $AddCar, $collec;
+   
+
+   	public function show($id){
+   	  $product = Product::find($id);
+      $this->img =$product->img;
+   		
+      $detaill= DetailProduct::where('product_id',$id)->first();
+     		$this->product_id = $detaill;
+        $this->description = $detaill->description;
+        $this->amount = $detaill->amount;
+
+        $this->colours = $product->colours;
+        $Ncolours = count($product->colours);
+        $this->Ncolours = $Ncolours;
+
+        $this->images = $product->images;
+        $Nimages = count($product->images);
+        $this->Nimages = $Nimages;
+   	}
+
+
+
+
+    public function AddCar($id){
+      $product = Product::find($id);
+      $this->AddCar= $this->AddCar + 1;
+      //$this->ProdNames=$product->name;     
+     // $this->NewProd($id);
+       $this->collec = $product->name;
+
+    }
+
+
+    public function NewProd($id){
+       $collec = $this->add;
+       // $collec = new Collection($product->name);
+    }
 
 
 

@@ -24,7 +24,8 @@ class CategoryFactory extends Factory
     {
        
         return [
-            'name' => $this->faker->name(),
+            'name' => $this->faker->unique()->sentence(1),
+            'img' => $this->faker->imageUrl(500, 200),
         ];
     }
 

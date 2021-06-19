@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
     {
     	$this->truncateTables([
     		'users', 
-            'detail_products', 'prices',
+            'detail_products', 'prices','colours','images',
             'products',   
             'categories',
             
@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
         //llamando directamente al fatory  
          \App\Models\User::factory(10)->create();   
 
+    
          //Ejec factory atraves de seeder
         // $this->call(SeederCategorys::class); 
         // $this->call(SeederProducts::class); 
@@ -32,6 +33,9 @@ class DatabaseSeeder extends Seeder
             SeederCategorys::class,
             SeederProducts::class, //ejecuta factory product-Detail-Prices
         ]);
+            \App\Models\DetailProduct::factory()->count(30)->create(); 
+            \App\Models\Image::factory(50)->create();
+            \App\Models\Colour::factory()->count(30)->create(); 
 
 
     }

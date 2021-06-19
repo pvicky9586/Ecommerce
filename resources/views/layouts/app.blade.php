@@ -25,7 +25,78 @@
 
 <body>
 
-           <div class="container">
+<!-- 
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-dark p-4">
+          <h4 class="text-white">Administrar</h4>
+                <ul class="navbar-nav ml-auto"> -->
+                       <!-- Authentication Links -->
+       <!--          </ul>
+        </div>
+        </div> -->
+
+
+
+
+
+
+
+  <nav class="navbar navbar-dark bg-dark">
+
+ <!--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+    <img src="{{asset('images/ecommerce.png')}}" width="400" height="50">
+                    <ul class="navbar-nav">
+             <!-- Authentication Links -->
+                        @guest
+                        <div style="display: flex;">
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}"><img src="{{asset('images/user.png')}}" width="50"  title="Entrar"></a>
+                                </li>
+                            @endif                            
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link display-7" href="{{ route('register') }}">{{ __('Registrarte') }}</a>
+                                </li>
+                            @endif
+                        </div>
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="text-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                   <?php echo  (strtoupper (Auth::user()->username) )?></a>
+                                </a>
+                                <label class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a href="{{ route('logout') }}" class="text-danger " onclick="event.preventDefault(); document.getElementById('logout-form').submit();" title="Salir">Cerrar Seccion
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                  @csrf
+                                </form>
+                                </label>
+                            </li>
+                           
+                             <!--   <img src="{{asset('images/icons/acceso.png')}}" class="img-user-auth"> -->
+                              
+                              <li class="nav-item">
+                                    <a class="nav-link text-danger display-7" href="{{ route('Admin') }}">{{ __('Gestionar') }}</a>
+                                </li>
+                             </a>
+                        @endguest
+   </ul>
+  </nav>
+</div>
+
+
+
+
+
+
+
+
+
+           <div class="" style="margin: 5%;">
                 @yield('content')
                 @livewireScripts
            </div>    

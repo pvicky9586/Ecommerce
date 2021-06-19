@@ -8,24 +8,27 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    protected $fillable = [ 'name','category_id'  ];
+    protected $fillable = [ 'name','img','category_id'  ];
 
-    // public function category(){
-    // 	return $this->belongsTo(Category::class,'detail_products')
-    //         ->withPivot('category_id');
-    // }
-    public function details(){ 
-        return $this->belongsToMany(Product::class,'detail_products')
-            ->withPivot('product_id','colour','amount','img','value'); 
+    public function category(){
+    	return $this->belongsTo(Category::class);
     }
-    // public function Detail(){
-    // 	return $this->hasMany(DetailProduct::class);
+
+    public function detail(){ 
+        return $this->hasOne(DetailProduct::class);
+    }
+
+    public function colours(){ 
+        return $this->hasMany(Colour::class); 
+    }
+    public function images(){ 
+        return $this->hasMany(Image::class); 
+    }
+
+    // public function detail(){ 
+    //     return $this->belongsTo(Product::class,'colours')
+    //         ->withPivot('product_id','description','colour','amount','img','value'); 
     // }
 
-
-    // public function details(){ 
-    //     return $this->belongsToMany(DetailProduct::class,'detail_products')
-    //         ->withPivot('category_id','product_id','colour','amount','img'); 
-    // }
 
 }

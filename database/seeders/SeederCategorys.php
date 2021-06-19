@@ -15,41 +15,41 @@ class SeederCategorys extends Seeder
      */
     public function run()
     {
-
+        //$faker = Faker\Factory::create('es_ES');
  	   //DB::table('categories')->truncate();
-        //\App\Models\Category::factory()->count(5)->create();
+        \App\Models\Category::factory()->count(9)->create();
      
 
         
     	
 
-        DB::table('categories')->insert(
-        	['name' => 'Clothing'],
-       	);
-       	DB::table('categories')->insert(
-       		['name' => 'Footwear'],
-       	);
-       	DB::table('categories')->insert(
-       		['name' => 'Beauty'],
-       	);
-       	DB::table('categories')->insert(
-       		['name' => 'Cars'],
-       	);
-       	DB::table('categories')->insert(
-       		['name' => 'Home appliances'],
-       	);
-       	DB::table('categories')->insert(
-       		['name' => 'Animals'],
-       	);
-       	DB::table('categories')->insert(
-       		['name' => 'Sports'],
-       	);  
-        DB::table('categories')->insert(
-          ['name' => 'Technology'],
-        );   
-   		DB::table('categories')->insert(
-       		['name' => 'Specify'],
-       	);
+     //    DB::table('categories')->insert(
+     //    	['name' => 'Clothing'],
+     //   	);
+     //   	DB::table('categories')->insert(
+     //   		['name' => 'Footwear'],
+     //   	);
+     //   	DB::table('categories')->insert(
+     //   		['name' => 'Beauty'],
+     //   	);
+     //   	DB::table('categories')->insert(
+     //   		['name' => 'Cars'],
+     //   	);
+     //   	DB::table('categories')->insert(
+     //   		['name' => 'Home appliances'],
+     //   	);
+     //   	DB::table('categories')->insert(
+     //   		['name' => 'Animals'],
+     //   	);
+     //   	DB::table('categories')->insert(
+     //   		['name' => 'Sports'],
+     //   	);  
+     //    DB::table('categories')->insert(
+     //      ['name' => 'Technology'],
+     //    );   
+   		// DB::table('categories')->insert(
+     //   		['name' => 'Specify'],
+     //   	);
     }
 
     

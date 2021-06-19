@@ -1,51 +1,67 @@
-<div>
-<div class="pos-f-t">
-  <div class="collapse" id="navbarToggleExternalContent">
-    <div class="bg-dark p-4">
-      <h4 class="text-white">Category's</h4>
-      <span class="text-muted">Seleccione</span>
-           <select wire:model="category_id">
-            <option value="">----------</option>
-          @foreach($categorys as $cate)     
-            <option value="{{$cate->id}}">{{$cate->name}}</option>
-          @endforeach
-          </select>
+<div style="display: flex;">
+  <div style="width: 70%;">
+        <div>
+             <span class="text-muted">Categoria</span>
+             <select wire:model="category_id">
+              <option value="">Seleccione</option>
+            @foreach($categorys as $cate)     
+              <option value="{{$cate->id}}">{{$cate->name}}</option>
+            @endforeach
+            </select>
+        </div>
+      <!--       <div align="center">
+          <input type="text"   wire:model="search"  placeholder="Buscar por nombre" style="width: 70%">
+        </div>   -->
+      <div style="  display: flex; flex-wrap: wrap; width: 100%; align-items: center;">     
+      	@foreach($products as $prod)
+                      <div style=" margin: 0.5%;  border: 0.5px solid black; font-weight: bold;" >
+                          <div align="center">
+                            <img src="{{$prod->img}}" style="width: 100%; cursor: pointer;" title="Ver" 
+                             data-toggle="modal" data-target="#DetaillModal"  wire:click="show({{$prod->id}})">
+
+                          </div>
+                         <p  align="center">{{$prod->name}}</p>
+                          <p  align="center">{{$prod->id}}</p>
+                          <p  align="center">{{$prod->detail['value']}} $</p>
+                          <div align="center">
+                            <button align="center" class="btn btn-primary" wire:click.prevent="AddCar({{$prod->id}})">Agregar</button>
+                          </div>
+                      </div>    
+        @endforeach
+      </div>
+       <div style="color:blue;">
+        {{ $products->links() }}
+      </div> 
+  </div>
+  <div style="width: 30%">
+   <label class="display-5 text-primary"> Carrito de compras</label>
+     <div class="modal-body"> 
+      <div class="media-body" style=" border: 1px solid #d8d9d6;">
+      
+
+      @for($i=0; $i<=$AddCar; $i++)
+        <label>{{$i}} </label> 
+         
+        </p>
+      @endfor
+
+
+
+
+       <p>Total: {{$AddCar}}</p>
+       
+      </div>
     </div>
   </div>
-  <nav class="navbar navbar-dark bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </nav>
+ <p>
+
+
+
+
+
+              @include('Product.DetaillModal')
 </div>
 
 
-      <div style="display: flex;" align="center">
-        <div>
-          <img src="{{asset('images/ecommerce.png')}}" width="400">
-        </div>
-        <div style="margin-left: 10%;">
-           <input type="text"   wire:model="search"  placeholder="Buscar productos" style="padding: 3%;">
-        </div>  
-      </div>
-
-    <div style="  display: flex; flex-wrap: wrap; width: 100%; align-items: center;">     
-    	@foreach($products as $prod)
-            <?php $details=$prod->details;
-                foreach ($details as $d) { ?> <!-- recorrec table pivot-->
-                    <div style=" margin: 0.5%;  border: 0.5px solid black; font-weight: bold;">
-                        <div align="center"><img src="{{$d->pivot['img']}}" style="width: 100%;"></div>
-                        <p  align="center">{{$d->pivot['value']}} $</p>
-
-                     </div> 
-                <?php }  ?> 
-      @endforeach
-    </div>
-    <div style="color:blue;">
-      {{ $products->links() }}
-    </div> 
-
-
-</div>
 
 
