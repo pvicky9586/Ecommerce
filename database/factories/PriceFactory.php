@@ -23,7 +23,7 @@ class PriceFactory extends Factory
     {
         return [
            'value' => $this->faker->randomFloat(2, 10, 100),
-           'product_id' => rand(1,30)
+           'product_id' => rand(1,9)
         ];
     }
 }

@@ -19,6 +19,9 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
+<!-- boorstrap 3 -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+<!-- boorstrap 4 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
@@ -43,18 +46,15 @@
 
 
   <nav class="navbar navbar-dark bg-dark">
-
- <!--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button> -->
-    <img src="{{asset('images/ecommerce.png')}}" width="400" height="50">
+<span class="display-2 text-center" style="color: #fff">E-COMMERCE</span>
+    
                     <ul class="navbar-nav">
              <!-- Authentication Links -->
                         @guest
                         <div style="display: flex;">
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}"><img src="{{asset('images/user.png')}}" width="50"  title="Entrar"></a>
+                                    <a class="nav-link" href="{{ route('login') }}"><img src="{{asset('images/icons/user.png')}}" width="50"  title="Entrar"></a>
                                 </li>
                             @endif                            
                             @if (Route::has('register'))
@@ -96,10 +96,13 @@
 
 
 
-           <div class="" style="margin: 5%;">
+      <div id="app">
+             
+              <main class="py-4">
                 @yield('content')
                 @livewireScripts
-           </div>    
+              </main>
+      </div>    
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

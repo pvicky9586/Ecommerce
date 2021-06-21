@@ -17,12 +17,14 @@ class CreateProductsTable extends Migration
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('img')->nullable();
+            $table->float('price')->nullable();
+            $table->string('image_path')->nullable();
             $table->unsignedBigInteger('category_id')->nullable();
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('categories')
             ->onDelete('cascade');
+
         });
     }
 

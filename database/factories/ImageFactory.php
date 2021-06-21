@@ -22,8 +22,8 @@ class ImageFactory extends Factory
     public function definition()
     {
         return [
-           'img' => $this->faker->imageUrl(150, 200, 'cats', true, 'Faker'),
-           'product_id' => rand(1,30)
+           'imgs' => $this->faker->imageUrl(150, 200, 'cats', true, 'Faker'),
+           'product_id' => rand(1,15)
         ];
     }
 }

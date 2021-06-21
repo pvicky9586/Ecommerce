@@ -16,7 +16,9 @@ class CreateColoursTable extends Migration
         Schema::create('colours', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
-            $table->string('colour');
+            $table->string('colour')->nullable();
+            $table->string('cod');
+            $table->integer('num')->nullable();
             $table->unsignedBigInteger('product_id');
             $table->timestamps();
 

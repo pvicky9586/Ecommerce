@@ -7,8 +7,8 @@ use Livewire\WithPagination;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\DetailProduct;
-use App\Models\Colour;
-use Illuminate\Support\Collection;
+//use App\Models\Colour;
+//use Illuminate\Support\Collection;
 //use App\Models\Price;
 
 class Productos extends Component
@@ -17,6 +17,7 @@ class Productos extends Component
 	protected $paginationTheme = 'bootstrap';
 
 	public $categorys, $search, $category_id='';
+  public $product, $amount, $colours, $Ncolours, $images, $Nimages, $image_path, $description;
 
 	public function updatingSearch()
     {
@@ -44,7 +45,7 @@ class Productos extends Component
     		return view('livewire.productos',[			
 			'products'=> Product::where(function($sub_query)
 				{   $sub_query->where('name','like', '%'.$this->search.'%');
-				})->paginate(10) 
+				})->paginate(15) 
 			]);
 
     	}else{			
@@ -57,48 +58,45 @@ class Productos extends Component
    		}
     }
 
-    public $product, $amount, $colours, $images, $Nimages, $Ncolours, $img, $description;
-     public $ProdNames, $AddCar, $collec;
+   
+     // public $ProdNames, $AddCar, $collec, $detaill;
+     // public $name, $price,$slug, $img, $quantity, $product_id;
    
 
    	public function show($id){
+      $this->default();
    	  $product = Product::find($id);
-      $this->img =$product->img;
-   		
+      $this->colours = $product->colours;
+      $this->Ncolours = count($product->colours);
+      $this->image_path =$product->image_path;   		
       $detaill= DetailProduct::where('product_id',$id)->first();
-     		$this->product_id = $detaill;
-        $this->description = $detaill->description;
-        $this->amount = $detaill->amount;
-
-        $this->colours = $product->colours;
-        $Ncolours = count($product->colours);
-        $this->Ncolours = $Ncolours;
-
-        $this->images = $product->images;
-        $Nimages = count($product->images);
-        $this->Nimages = $Nimages;
+      //$this->product_id = $detaill;
+      if($detaill){
+        //$this->detaill = $product->detail;
+        $this->description = $detaill->description; 
+        $this->amount = $detaill->amount.' disponibles';   
+        //$this->colours = $detaill->colours;
+        // $this->images = $product->images;
+        // $Nimages = count($product->images);
+        // $this->Nimages = $Nimages;        
+        }
+       
+        
+       
+     
    	}
 
 
 
 
-    public function AddCar($id){
-      $product = Product::find($id);
-      $this->AddCar= $this->AddCar + 1;
-      //$this->ProdNames=$product->name;     
-     // $this->NewProd($id);
-       $this->collec = $product->name;
+   public function default(){
+    $this->description = '';
+    $this->amount = '';
+    $this->colours ='';
+    $this->images = '';
+    $this->image_path ='';
 
-    }
-
-
-    public function NewProd($id){
-       $collec = $this->add;
-       // $collec = new Collection($product->name);
-    }
-
-
-
+   }
 
 
 

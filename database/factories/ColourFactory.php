@@ -21,9 +21,16 @@ class ColourFactory extends Factory
      */
     public function definition()
     {
+
+       // $array = ['colour' => 'Rojo', 'cod' => '#dc1a0a'];
+
+      
         return [
-            'colour' => $this->faker->hexcolor(),
-            'product_id' => rand(1,30), 
+            
+            // 'colour' => $this->faker->name(6),
+            'cod' => $this->faker->hexcolor(),
+            'num' => $this->faker->randomDigit(1-20),
+            'product_id' => rand(1,9), 
         ];
     }
 }

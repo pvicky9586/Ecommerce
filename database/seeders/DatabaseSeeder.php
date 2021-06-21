@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
         ]);
             \App\Models\DetailProduct::factory()->count(30)->create(); 
             \App\Models\Image::factory(50)->create();
-            \App\Models\Colour::factory()->count(30)->create(); 
+            \App\Models\Colour::factory()->count(90)->create(); 
 
 
     }

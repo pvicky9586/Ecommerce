@@ -16,7 +16,7 @@ class CreateImagesTable extends Migration
         Schema::create('images', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
-            $table->string('img')->nullable();
+            $table->string('imgs')->nullable();
             $table->unsignedBigInteger('product_id');
             $table->timestamps();
             
