@@ -5,13 +5,18 @@
   <div style="width: 70%;">
         <div>
              <span class="text-muted">Categoria</span>
-             <select wire:model="category_id">
+             <select wire:model="category_id" wire:change="change_img">
               <option value="">Seleccione</option>
             @foreach($categorys as $cate)     
               <option value="{{$cate->id}}">{{$cate->name}}</option>
             @endforeach
             </select>
+            @if($category_id)
+                <img src="/images/Categorys/{{$category}}"  class="card-img-top mx-auto"  style="height: 100px; width: 300px;display: block;" >
+            @endif
         </div>
+
+<!--         <img src="/images/Categorys/$category')}}"> -->
         <!--       <div align="center">
             <input type="text"   wire:model="search"  placeholder="Buscar por nombre" style="width: 70%">
           </div>   -->
