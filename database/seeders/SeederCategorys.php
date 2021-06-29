@@ -24,62 +24,50 @@ class SeederCategorys extends Seeder
 
         DB::table('categories')->insert(
         	['name' => 'Clothing',
-             'image_cat' => 'clothing.jpeg'],
+             'img' => 'clothing.jpeg'],
        	);
        	DB::table('categories')->insert(
        		['name' => 'Footwear', 
-             'image_cat' => 'footwear.jpg'],
+             'img' => 'footwear.jpg'],
        	);
        	DB::table('categories')->insert(
        		['name' => 'Beauty',
-             'image_cat' => 'beauty.jpg'],
+             'img' => 'beauty.jpg'],
        	);
        	DB::table('categories')->insert(
        		['name' => 'Cars',
-            'image_cat' => 'cars.jpg'],
+            'img' => 'cars.jpg'],
        	);
         DB::table('categories')->insert(
             ['name' => 'Health',
-            'image_cat' => 'health.jpg'],
+            'img' => 'health.jpg'],
         );
       	DB::table('categories')->insert(
       		['name' => 'Technological Equipments',
-             'image_cat' => 'technological equipments.jpg'],
+             'img' => 'technological equipments.jpg'],
       	);
       	DB::table('categories')->insert(
       		['name' => 'Mobile Technology',
-            'image_cat' => 'Mobile technology.jpg'],
+            'img' => 'Mobile technology.jpg'],
       	);
        	DB::table('categories')->insert(
        		['name' => 'Sports',
-            'image_cat' => 'sports.jpg'],
+            'img' => 'sports.jpg'],
        	);  
         DB::table('categories')->insert(
           ['name' => 'Fashion',
-           'image_cat' => 'fashion.jpg'],
-        );   
-   	    DB::table('categories')->insert(
-       		['name' => 'Specify'],
-       	);
-    }
+           'img' => 'fashion.jpg'],
+        );
 
-    
+    }
 }
 
 
-
-
-
-
-
-
-// ropa clothing
-// calzado footwear
-// belleza beauty
-// autos cars
-// Electrodomesticos Home appliances
-// animales
-// deportes
-// tecnologia
-// especifique
-
+// 1 ropa clothing
+// 2 calzado footwear
+// 3 belleza beauty
+// 4 autos cars
+// 5 Electrodomesticos Home appliances
+// 6 animales
+// 7 deportes
+// 8 tecnologia

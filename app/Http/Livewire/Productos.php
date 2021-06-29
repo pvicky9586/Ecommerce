@@ -16,7 +16,7 @@ class Productos extends Component
 	use WithPagination;
 	protected $paginationTheme = 'bootstrap';
 
-	public $categorys, $category, $search, $category_id='', $img;
+	public $categorys, $category, $search, $category_id, $img;
   public $product, $amount, $colours, $Ncolours, $images, $Nimages, $image_path, $description;
 
 	public function updatingSearch()
@@ -41,8 +41,10 @@ class Productos extends Component
 
     public function render()
     {
+
     	if(empty($this->category_id)){
-    		return view('livewire.productos',[			
+    		return view('livewire.productos',[	
+
 			'products'=> Product::where(function($sub_query)
 				{   $sub_query->where('name','like', '%'.$this->search.'%');
 				})->paginate(15) 
@@ -59,9 +61,10 @@ class Productos extends Component
     }
 
     public function change_img(){
+
       $category = Category::find($this->category_id);
       if($category){
-         $this->category = $category->image_cat;
+         $this->category = $category->img;
       }
      
     }
