@@ -45,16 +45,17 @@
                 @endif
 
                 @foreach($cartCollection as $item)
+                   ruta {{ $item->attributes->image }}
                     <div class="row">
                         <div class="col-lg-3">
-                            <img src="/images/{{ $item->attributes->image_path }}" class="img-thumbnail" width="200" height="200">
+                            <img src="/images/{{ $item->attributes->image }}" class="img-thumbnail" width="200" height="200">
                         </div>
                         <div class="col-lg-5">
                             <p>
                                 <b><a href="/shop/{{ $item->attributes->slug }}">{{ $item->name }}</a></b><br>
                                 <b>Price: </b>${{ $item->price }}<br>
                                 <b>Sub Total: ${{ $item->price }} </b><br>
-                                {{--                                <b>With Discount: </b>${{ \Cart::get($item->id)->getPriceSumWithConditions() }}--}}
+                                {{-- <b>With Discount: </b>${{ \Cart::get($item->id)->getPriceSumWithConditions() }}--}}
                             </p>
                         </div>
                         <div class="col-lg-4">
@@ -65,7 +66,7 @@
                                         <input type="hidden" value="{{ $item->id}}" id="id" name="id">
                                         <input type="number" class="form-control form-control-sm" value="{{ $item->quantity }}"
                                                id="quantity" name="quantity" style="width: 70px; margin-right: 10px;">
-                                        <button class="btn btn-success btn-sm" style="margin-right: 25px;" title="actualizar"><span class="glyphicon glyphicon-pencil"></span></button>
+                                        <button class="btn btn-sm" style="margin-right: 25px;" title="actualizar"><img src="{{asset('images/icons/act.jpg')}}" width="20"></button>
                                     </div>
                                 </form>
                                 <form action="{{ route('cart.remove') }}" method="POST">

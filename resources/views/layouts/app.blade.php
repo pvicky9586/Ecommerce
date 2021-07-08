@@ -46,9 +46,8 @@
 
 
   <nav class="navbar navbar-dark bg-dark">
-<span class="display-2 text-center" style="color: #fff">E-COMMERCE</span>
-    
-                    <ul class="navbar-nav">
+<span class="display-4 text-center font-italic"style="color: #fff"><mark>E-COMMERCE</mark></span>
+            <ul class="navbar-nav">
              <!-- Authentication Links -->
                         @guest
                         <div style="display: flex;">

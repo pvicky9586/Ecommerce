@@ -46,7 +46,7 @@ class SeederProducts extends Seeder
         DB::table('products')->insert([
             'name' => 'Ford F-150 ',
             'price' => '100000',
-            'image_path' => 'images/Products/cars/Ford-F-150.jpeg',
+            'image_path' => 'Products/cars/Ford-F-150.jpeg',
             'category_id'=>  4,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -63,7 +63,7 @@ class SeederProducts extends Seeder
         DB::table('products')->insert([
             'name' => 'Renault Kwid',
             'price' => '154700',
-            'image_path' => 'images/Products/cars/Renault-Kwid.jpeg',
+            'image_path' => 'Products/cars/Renault-Kwid.jpeg',
             'category_id'=>  4,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -79,7 +79,7 @@ class SeederProducts extends Seeder
         DB::table('products')->insert([
             'name' => 'Toyota Land Cruiser',
             'price' => '154700',
-            'image_path' => 'images/Products/cars/Toyota Land Cruiser.jpeg',
+            'image_path' => 'Products/cars/Toyota Land Cruiser.jpeg',
             'category_id'=>  4,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -101,7 +101,7 @@ class SeederProducts extends Seeder
         DB::table('products')->insert([
             'name' => 'kit-Complet',
             'price' => '154',
-            'image_path' => 'images/Products/beauty/kit-complet.jpeg',
+            'image_path' => 'Products/beauty/kit-complet.jpeg',
             'category_id'=>  3,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -118,7 +118,7 @@ class SeederProducts extends Seeder
         DB::table('products')->insert([
             'name' => 'Labiales',
             'price' => '154',
-            'image_path' => 'images/Products/beauty/labials.jpeg',
+            'image_path' => 'Products/beauty/labials.jpeg',
             'category_id'=>  3,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -134,7 +134,7 @@ class SeederProducts extends Seeder
          DB::table('products')->insert([
             'name' => 'Secador Cabello',
             'price' => '154',
-            'image_path' => 'images/Products/beauty/secador.jpeg',
+            'image_path' => 'Products/beauty/secador.jpeg',
             'category_id'=>  3,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -160,7 +160,7 @@ class SeederProducts extends Seeder
         DB::table('products')->insert([
             'name' => 'Outfits con falda',
             'price' => '25',
-            'image_path' => 'images/Products/clothing/clothing.png',
+            'image_path' => 'Products/clothing/clothing.png',
             'category_id'=>  1,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -176,7 +176,7 @@ class SeederProducts extends Seeder
         DB::table('products')->insert([
             'name' => 'Sueter Dama Y Caballero',
             'price' => '18',
-            'image_path' => 'images/Products/clothing/Sueter Dama Y Caballero.jpg',
+            'image_path' => 'Products/clothing/Sueter Dama Y Caballero.jpg',
             'category_id'=>  1,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -194,9 +194,9 @@ class SeederProducts extends Seeder
 
  //FOOTWEAR 1-------------------------------------------------
         DB::table('products')->insert([
-            'name' => 'Zapatos Adidas',
+            'name' => 'Nike',
             'price' => '25',
-            'image_path' => 'images/Products/footwear/adidas.webp',
+            'image_path' => 'Products/footwear/nike.jpg',
             'category_id'=>  2,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -212,7 +212,7 @@ class SeederProducts extends Seeder
     DB::table('products')->insert([
             'name' => 'Adidas Stan Smith',
             'price' => '25',
-            'image_path' => 'images/Products/footwear/adidas Sta.webp',
+            'image_path' => 'Products/footwear/adidas Sta.jpg',
             'category_id'=>  2,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -227,9 +227,9 @@ class SeederProducts extends Seeder
 
 
     DB::table('products')->insert([
-            'name' => 'Adidas Stan Smith',
+            'name' => 'Skechers',
             'price' => '15',
-            'image_path' => 'images/Products/footwear/Skechers.webp',
+            'image_path' => 'Products/footwear/skechers.jpg',
             'category_id'=>  2,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -248,7 +248,7 @@ class SeederProducts extends Seeder
         DB::table('products')->insert([
             'name' => 'Corrector De Postura',
             'price' => '22',
-            'image_path' => 'images/Products/health/Corrector De Postura.webp',
+            'image_path' => 'Products/health/Corrector De Postura.jpeg',
             'category_id'=>  5,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -264,7 +264,7 @@ class SeederProducts extends Seeder
          DB::table('products')->insert([
                 'name' => 'Termometro Berrcom Digital',
                 'price' => '12',
-                'image_path' => 'images/Products/health/Termometro.webp',
+                'image_path' => 'Products/health/Termometro.jpeg',
                 'category_id'=>  5,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -280,7 +280,7 @@ class SeederProducts extends Seeder
         DB::table('products')->insert([
                 'name' => 'Filter Plus Filtro',
                 'price' => '12',
-                'image_path' => 'images/Products/health/Filter Plus Filtro.webp',
+                'image_path' => 'Products/health/Filter Plus Filtro.jpg',
                 'category_id'=>  5,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -298,7 +298,7 @@ class SeederProducts extends Seeder
         DB::table('products')->insert([
             'name' => 'Computador Core I5 3.1 Ghz',
             'price' => '202',
-            'image_path' => 'images/Products/technological/Computador Core I5 3.1 Ghz.webp',
+            'image_path' => 'Products/technological/Computador Core I5 3.1 Ghz.jpg',
             'category_id'=>  6,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -321,7 +321,7 @@ class SeederProducts extends Seeder
         DB::table('products')->insert([
             'name' => 'Cpu Core I9-9900k',
             'price' => '202',
-            'image_path' => 'images/Products/technological/Cpu Core I9-9900k.webp',
+            'image_path' => 'Products/technological/Cpu Core I9-9900k.jpg',
             'category_id'=>  6,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -338,7 +338,7 @@ class SeederProducts extends Seeder
         DB::table('products')->insert([
             'name' => 'Cpu Core I7',
             'price' => '202',
-            'image_path' => 'images/Products/technological/Cpu Core I7.webp',
+            'image_path' => 'Products/technological/Cpu Core I7.jpg',
             'category_id'=>  6,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -368,7 +368,7 @@ class SeederProducts extends Seeder
         DB::table('products')->insert([
             'name' => 'Hyundai 4g Modelo L622',
             'price' => '120',
-            'image_path' => 'images/Products/movile-technology/Hyundai 4g Modelo L622.webp',
+            'image_path' => 'Products/movile-technology/Hyundai 4g Modelo L622.jpg',
             'category_id'=>  7,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -384,7 +384,7 @@ class SeederProducts extends Seeder
         DB::table('products')->insert([
             'name' => 'Hyundai 4g Modelo L622',
             'price' => '120',
-            'image_path' => 'images/Products/movile-technology/Celular Smart Techno Spark .webp',
+            'image_path' => 'Products/movile-technology/Celular Smart Techno Spark .jpg',
             'category_id'=>  7,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -403,7 +403,7 @@ class SeederProducts extends Seeder
         DB::table('products')->insert([
             'name' => 'Pelota De Softbol',
             'price' => '120',
-            'image_path' => 'images/Products/sport/Pelota De Softbol.webp',
+            'image_path' => 'Products/sport/Pelota De Softbol.jpg',
             'category_id'=>  8,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -421,7 +421,7 @@ class SeederProducts extends Seeder
         DB::table('products')->insert([
             'name' => 'Hyundai 4g Modelo L622',
             'price' => '120',
-            'image_path' => 'images/Products/sport/El BOSU.webp',
+            'image_path' => 'Products/sport/El BOSU.jpg',
             'category_id'=>  8,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -440,7 +440,7 @@ class SeederProducts extends Seeder
         DB::table('products')->insert([
             'name' => 'Beyond the Stereotypes',
             'price' => '120',
-            'image_path' => 'images/Products/fashion/Fashion-Communication.jpg',
+            'image_path' => 'Products/fashion/Fashion-Communication.jpg',
             'category_id'=>  9,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -456,7 +456,7 @@ class SeederProducts extends Seeder
         DB::table('products')->insert([
             'name' => 'Tipping Point',
             'price' => '120',
-            'image_path' => 'images/Products/fashion/shutterstock.jpg',
+            'image_path' => 'Products/fashion/shutterstock.jpg',
             'category_id'=>  9,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')

@@ -4,7 +4,7 @@
     <div class="modal-content">
         <div class="modal-header" >
            <h5 class="display-4 text-primary text-center"  style="float: center" id="exampleModalLabel">
-              <img src="{{$image_path}}">
+              <img src="/images/{{$image_path}}"> &nbsp;&nbsp;<small class=" display-4">{{$name}}</small>
           </h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
              <span aria-hidden="true close-btn"><img src="{{asset('images/icons/close.png')}}" width="50" ></span>
@@ -15,10 +15,8 @@
 
     <div class="modal-body"> 
       <div class="media-body" style=" border: 1px solid #d8d9d6;">
-        <h4 class="media-heading" >
-        <img src="" style="width: 5%;">
-        </h4>
         <div style="border: 1px solid  #d5d2d1; padding: 5%;" class="text-center display-6">
+          Detalles:
           <p>{{$description}}</p>
           <p class="display-5 text-primary">{{$amount}}</p>
         </div>
@@ -39,7 +37,7 @@
 
 
           <div style="display: flex; flex-wrap: wrap; align-content: space-between;">
-          <label>Imagen(s):</label>
+          <small>mas imagens:</small>
     <!--       @for($j=0; $j<$Nimages; $j++)
             
               <label><img src="<?php echo $images[$j]->img; ?>" style="width: 30%;"></label>
